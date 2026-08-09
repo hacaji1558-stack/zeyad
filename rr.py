@@ -1,7 +1,7 @@
 import streamlit as st
 import time
 
-st.set_page_config(page_title="zeyad project", layout="wide")
+st.set_page_config(page_title="Ahmed's Elevator Portfolio", layout="wide")
 
 if "floor" not in st.session_state:
     st.session_state.floor = 1
@@ -16,14 +16,14 @@ if "bot_messages" not in st.session_state:
 
 # Check if a valid name is active on Floor 4 to clear the entire screen
 current_name = st.session_state.get("floor4_name_input", "").strip().lower()
-show_clean_message = st.session_state.floor == 4 and current_name in ["mazen", "zeyad", "ziad", "devora"]
+show_clean_message = st.session_state.floor == 4 and current_name in ["mazen", "zeyad", "ziad", "devora", "esraa"]
 
 if show_clean_message:
     if current_name == "mazen":
         st.markdown(
             "# hey mazen i wanted to thank you for making me code , "
             "i always hated cooding and a came to this course so i prepare to second year of secondry school "
-            "but i had so much fun and iam sad to say goodbye , "
+            "but i had so much fun and iam said to say goodbye , "
             "you were a great teacher and an amazing friend thank u"
         )
     elif current_name in ["zeyad", "ziad"]:
@@ -34,6 +34,12 @@ if show_clean_message:
         )
     elif current_name == "devora":
         st.markdown("# WE WILL MISS YOU A LOT 💙")
+    elif current_name == "esraa":
+        st.markdown(
+            "# hey esraa i just wanted to say how much i love u and how much you made my life better , "
+            "i really love u and thanks for making my life better"
+        )
+        st.image("esraa.jpg", use_column_width=True)
 
     st.write("")
     if st.button("⬅️ Back"):
@@ -80,7 +86,7 @@ else:
     if st.session_state.floor == 1:
         st.title("Welcome to My Portfolio! 👋")
         st.write(
-            "Hi, I'm zeyad! I'm a high school student passionate about programming and web development. "
+            "Hi, I'm Ahmed! I'm a high school student passionate about programming and web development. "
             "I started learning Python to build cool projects, and Streamlit allowed me to transform my scripts "
             "into interactive web apps. Check out my projects and learning journey using the elevator in the sidebar!"
         )
@@ -173,5 +179,5 @@ else:
 
         entered_name = st.text_input("Enter your name:", key="floor4_name_input").strip().lower()
 
-        if entered_name and entered_name not in ["mazen", "zeyad", "ziad", "devora"]:
+        if entered_name and entered_name not in ["mazen", "zeyad", "ziad", "devora", "esraa"]:
             st.error("imposter get the fuck out")
